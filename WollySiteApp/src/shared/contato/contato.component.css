@@ -1,0 +1,35 @@
+.dados {
+    margin-bottom: 35px;
+}
+
+.dados .titulo {
+    color: rgb(114, 0, 0);
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.dados .subtitulo {
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.btn-save {
+    background-color: rgb(114, 0, 0);
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control-lg {
+    height: 60px;
+    font-size: 1rem;
+}
+
+.modal {
+    display: block;
+    transition: ease-in;
+}

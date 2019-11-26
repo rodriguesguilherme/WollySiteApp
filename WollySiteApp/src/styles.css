@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #000000;
+    padding-bottom: 20px;
+}
+
+.estr-vagas, .estr-contato {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+}

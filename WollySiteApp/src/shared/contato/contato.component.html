@@ -1,0 +1,62 @@
+<div class="estr-contato">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="dados" *ngFor="let dado of dados">
+                    <div *ngIf="dado.titulo != 'Telefone'">
+                        <p class="titulo">{{ dado.titulo }}:</p>
+                        <p class="subtitulo">{{ dado.subtitulo }}</p>
+                    </div>
+                    <div *ngIf="dado.titulo == 'Telefone'">
+                        <p class="titulo">{{ dado.titulo }}:</p>
+                        <p class="subtitulo">{{ dado.subtitulo | telefone }}</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <form [formGroup]="addContato" (ngSubmit)="saveContact(addContato.value)">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" formControlName="name"
+                            placeholder="Seu Nome">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control form-control-lg" formControlName="mail"
+                            placeholder="Seu Email">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="tel" class="form-control form-control-lg" maxlength="15" formControlName="phone"
+                            (keyup)="mascara()" placeholder="Seu Telefone" id="telefone">
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="form-control" formControlName="msg" rows="3"
+                            placeholder="Sua Mensagem"></textarea>
+                    </div>
+
+                    <div class="form-footer float-right">
+                        <button type="submit" class="btn btn-save btn-lg" [disabled]="!addContato.valid">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="modal" *ngIf="modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ modalTitle }}</h5>
+                <button class="close" aria-label="Close" (click)="modal = false">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>{{ modalText }}</p>
+            </div>
+        </div>
+    </div>
+</div>
